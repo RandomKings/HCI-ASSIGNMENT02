@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>HCI ASSIGNMENT-02</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>What's Your Favorite Place?</h1>
+        </div>
+
+        <div class="body">
+            <form>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <br>
+                    <br>
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name "email" required>
+                    <br>
+                    <br>
+                    <label for="favoritePlace">Favorite Place:</label>
+                    <input type="text" id="favoritePlace" name="favoritePlace" required>
+                    <br>
+                    <br>
+                    <label for="placeImage">Upload an image of your favorite place:</label>
+                    <input type="file" id="placeImage" name="placeImage" accept="image/*" required>
+                    <br>
+                    <br>
+                    <label for="visitDate">When did you visit your favorite place?</label>
+                    <input class ="cringe" type="date" id="visitDate" name="visitDate" required>
+                </fieldset>
+                <br>
+                <table border="1">
+                    <tr>
+                        <th class="location-heading" colspan="2">Where Are You From?</th>
+                    </tr>
+                    <tr class="wheretable">
+                        <td rowspan="2">
+                            <label>Country:</label>
+                            <input type="text" name="country">
+                            <br>
+                            <br>
+                            <label>City:</label>
+                            <input type="text" name="city">
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <table>
+                    <tr>
+                        <th>Age Group (1-100):</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="range" id="age" name="age" min="1" max="100" required>
+                            <span id="ageValue" style="text-align: center;">50</span>
+                        </td>
+                    </tr>
+                </table>
+                <fieldset>
+                    <legend>Gender</legend>
+                    <label>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        Male
+                    </label>
+                    <label>
+                        <input type="radio" id="female" name="gender" value="female" required>
+                        Female
+                    </label>
+                </fieldset>
+                <br><br>
+                <!-- Terms and Conditions -->
+                <fieldset>
+                    <legend>Terms and Conditions</legend>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I have read and agree to the <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank">Terms and Conditions</a></label>
+                </fieldset>
+                <input type="submit" class="form-submit-button" value="Book Now">
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    const ageSlider = document.getElementById('age');
+    const ageValue = document.getElementById('ageValue');
+    ageSlider.addEventListener('input', function () {
+        ageValue.textContent = ageSlider.value;
+    });
+</script>
+</html>
